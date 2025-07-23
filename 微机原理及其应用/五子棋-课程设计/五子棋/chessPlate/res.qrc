@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/back.jpg</file>
+        <file>res/black.png</file>
+        <file>res/chess_back.jpg</file>
+        <file>res/dingwei.png</file>
+        <file>res/exeLogo.jpg</file>
+        <file>res/exit.jpg</file>
+        <file>res/exit1.jpg</file>
+        <file>res/help.png</file>
+        <file>res/start.png</file>
+        <file>res/start1.png</file>
+        <file>res/title.png</file>
+        <file>res/white.png</file>
+        <file>res/company.mp3</file>
+        <file>res/gamesound.wav</file>
+        <file>res/startSound.wav</file>
+        <file>res/banzou.wav</file>
+    </qresource>
+</RCC>

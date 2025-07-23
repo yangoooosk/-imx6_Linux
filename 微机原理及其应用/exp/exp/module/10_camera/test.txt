@@ -1,0 +1,2 @@
+cd /unit_tests
+./mxc_v4l2_overlay.out -iw 640 -ih 480 -it 0 -il 0 -ow 400 -oh 400 -ot 20 -ol 20 -r4 -t 50 -d 0 -fr 30

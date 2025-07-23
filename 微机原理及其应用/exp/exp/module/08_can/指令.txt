@@ -1,0 +1,9 @@
+设置波特率：ip link set can0 up type can bitrate 125000
+打开can0: ifconfig can0 up
+关闭can0: ifconfig can0 down
+接收can0数据：candump can0
+发送can0数据：cansend can0 123#11223344556677
+查看can0总线初始化：dmesg | grep can
+查看can0连接状态：ip -details link show can0
+
+cansend can0 123#16

@@ -1,0 +1,18 @@
+﻿测试key
+先在开发平台命令行执行
+cat /proc/bus/input/devices
+查看key的输入事件号，如下：
+
+I: Bus=0019 Vendor=0001 Product=0001 Version=0100
+N: Name="gpio-keys"
+P: Phys=gpio-keys/input0
+S: Sysfs=/devices/soc0/gpio-keys/input/input6
+U: Uniq=
+H: Handlers=kbd event4 
+B: PROP=0
+B: EV=3
+B: KEY=40000000 1c16c0 0 0 0
+表示是事件4
+然后输入：
+./key /dev/input/event4按键即可出现打印信息。
+

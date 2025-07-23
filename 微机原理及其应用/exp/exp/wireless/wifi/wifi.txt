@@ -1,0 +1,39 @@
+wep:
+ifconfig wlan0 up
+iwlist scanning
+iwconfig wlan0 essid "dlink_Yanfa"
+iwconfig wlan0 key "1234554321"
+ifconfig eth0 down
+ifconfig wlan0 192.168.12.123
+route add default gw 192.168.12.1 dev wlan0
+iwconfig wlan0
+ping 笔记本/手机ip
+
+//================================================================
+wpa:
+ifconfig wlan0 192.168.12.123
+route add default gw 192.168.12.1 dev wlan0
+ifconfig 查看wlan配置
+
+修改vi /etc/wpa_supplicant.conf如下
+ctrl_interface=/var/run/wpa_supplicant
+ctrl_interface_group=0
+update_config=1
+
+network={
+	ssid="dlink_Yanfa"//用户名
+	scan_ssid=1
+	key_mgmt=WPA-EAP WPA-PSK IEEE8021X NONE
+	pairwise=TKIP CCMP
+	group=CCMP TKIP WEP104 WEP40
+	psk="1234554321"//密码
+}
+保存推出
+执行如下命令：
+wpa_supplicant -B w -D wext -i wlan0 -c /etc/wpa_supplicant.conf -dd
+wpa_supplicant -B w -D wext -i wlan0 -c /etc/wpa_supplicant.conf
+ifconfig wlan0 up
+iwconfig wlan0查看是否连接上网络
+ifconfig
+ping baidu.com
+

@@ -1,0 +1,19 @@
+TOPDIR = ../
+include $(TOPDIR)Rules.mak
+
+EXTRA_LIBS += -lpthread
+
+EXEC= $(INSTALL_DIR)/term ./term
+OBJS= term.o
+
+all: $(EXEC)
+
+$(EXEC): $(OBJS)
+	$(CC) -o $@ $(OBJS)  $(EXTRA_LIBS)
+
+install:
+	$(EXP_INSTALL) $(EXEC) $(INSTALL_DIR)
+
+
+clean:
+	-rm -f $(EXEC) *.elf *.gdb *.o
